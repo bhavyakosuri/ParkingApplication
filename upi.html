@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPI Payment</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        form { max-width: 300px; margin: auto; }
+        input, button { display: block; width: 100%; margin: 10px 0; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h2>UPI Payment</h2>
+    <form id="upi-form">
+        <input type="text" id="upi-id" placeholder="Enter UPI ID" required>
+        <input type="password" id="upi-password" placeholder="Enter Password" required>
+        <button type="submit">Proceed to Pay</button>
+    </form>
+
+    <script>
+        document.getElementById("upi-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const upiId = document.getElementById("upi-id").value;
+            const password = document.getElementById("upi-password").value;
+
+            if (upiId && password) {
+                alert("Payment Authentication Successful!");
+                // Redirect to payment gateway or confirmation page
+            } else {
+                alert("Invalid UPI ID or Password");
+            }
+        });
+    </script>
+</body>
+</html>
